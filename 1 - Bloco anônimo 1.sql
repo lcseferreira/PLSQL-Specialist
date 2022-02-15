@@ -1,0 +1,12 @@
+SET SERVEROUTPUT ON
+
+-- Bloco anônimo PL/SQL
+DECLARE 
+    vTexto VARCHAR2(100) := 'Hello, World.';
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(vTexto);
+EXCEPTION
+    WHEN OTHERS
+    THEN
+        DBMS_OUTPUT.PUT_LINE('Erro Oracle: ' || SQLCODE || SQLERRM);
+END;
